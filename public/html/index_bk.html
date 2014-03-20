@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+ 	<head>
+ 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 		<link rel="stylesheet" href="../stylesheets/jquery-mobile-five-swatches.min.css" />
+		<link rel="stylesheet" href="../stylesheets/jquery.mobile.icons.min.css" />
+ 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+ 		<style type="text/css">
+ 			html,body{ 
+				margin:0px; 
+				height:100%; 
+			} 
+ 			.ui-content{
+ 				 background:url("../images/twokidsedit.jpg") no-repeat center center fixed;
+ 				 background-size : 100% 100%;
+				 background-color: #D8EDEC; 
+				 padding-top:5%;
+ 				 padding-left: 5%;
+ 				 padding-right: 5%;
+ 				 padding-bottom: 10%;
+ 			}
+ 			#first_big_container{
+ 				
+ 				/*border: 1px red solid;*/
+ 				height: 100%;
+ 				width: 100%;
+ 			}
+ 			
+		    @media all and (max-width: 45em) {
+		        #first_big_container .mainpageblock {
+		           min-height: 8em;
+		           width: 100%;
+		        }
+		        .ui-icon-school{
+		    	background:url('../images/bank.png') no-repeat 50% 50%;
+		    	background-size : 3em 3em;
+		    	height: 6em;
+		    	width: 100%;
+		    }
+		    }
+ 			.mainpageblock {
+ 				  
+		          background:url("../images/graybg.jpg") no-repeat center center fixed;
+		          background-size : 100% 100%;
+		          margin: 2px;
+		          filter:alpha(opacity=50); /*IE*/
+			      -moz-opacity:0.5; /*MOZ , FF*/
+				  opacity:0.5; /*CSS3, FF1.5*/
+
+				
+		      }
+
+		    .mainpageblock p{
+		    	margin: 0;
+		    }  
+		    .mainpageblock .contentblock{
+		    	width: 100%;
+		    }
+			.ui-icon-school{
+		    	background:url('../images/bank.png') no-repeat 50% 50%;
+		    	background-size : 3em 3em;
+		    	height: 6em;
+		    	width: 100%;
+		    }
+		    
+		    
+ 		</style>
+ 		<script>
+ 			$(document).ready(function(){
+				var screen = $.mobile.getScreenHeight();
+
+				var header = $(".ui-header").hasClass("ui-header-fixed") ? $(".ui-header").outerHeight() - 1 : $(".ui-header").outerHeight();
+
+				var footer = $(".ui-footer").hasClass("ui-footer-fixed") ? $(".ui-footer").outerHeight() - 1 : $(".ui-footer").outerHeight();
+
+				var contentCurrent = $(".ui-content").outerHeight() - $(".ui-content").height();
+
+				var content = screen - header - footer - contentCurrent;
+
+				$(".ui-content").height(content);
+				
+ 			});
+ 		</script>
+		
+
+ 	</head>
+ 	<body>
+ 		<div data-role="page" id="welcome-page">
+ 			
+ 			<div data-role="content" class="ui-content" data-theme="a">
+ 				
+ 				<div id="first_big_container">
+					<div class="ui-grid-b">
+						<div class="ui-block-a">
+							<a href="#" class="ui-btn" >
+									<div class="ui-icon-school">
+									</div>
+									<div class=".contentblock">
+										<p>1235678</p>
+									</div>
+							</a>
+						</div>
+						<div class="ui-block-b">
+							<div class="mainpageblock ui-shadow ui-corner-all">
+								<p>12345678</p>
+								<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-inline">Check</a>
+							</div>
+						</div>
+						<div class="ui-block-c">
+							<div class="mainpageblock ui-shadow ui-corner-all">
+								<p>12345678</p>
+								<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-inline">Check</a>
+							</div>
+						</div>
+						<div class="ui-block-a">
+							<div class="mainpageblock ui-shadow ui-corner-all">
+								<p>12345678</p>
+								<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-inline">Check</a>
+							</div>
+						</div>
+						<div class="ui-block-b">
+							<div class="mainpageblock ui-shadow ui-corner-all"></div>
+						</div>
+						<div class="ui-block-c">
+							<div class="mainpageblock ui-shadow ui-corner-all"></div>
+						</div>
+						<div class="ui-block-a">
+							<div class="mainpageblock ui-shadow ui-corner-all"></div>
+						</div>
+						<div class="ui-block-b">
+							<div class="mainpageblock ui-shadow ui-corner-all"></div>
+						</div>
+						<div class="ui-block-c">
+							<div class="mainpageblock ui-shadow ui-corner-all"></div>
+						</div>
+					</div>
+					
+					
+ 				</div>
+ 				
+ 			</div>
+ 			
+ 		</div>
+ 	</body>
+</html>

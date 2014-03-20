@@ -2,10 +2,17 @@
 <html lang="zh-cn">
  	<head>
  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
- 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
- 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+ 		
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
 		<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+ 		<link rel="stylesheet" href="../stylesheets/jquery.mobile-1.4.2.css" />
+		
+
  		<style type="text/css">
+ 			html,body{ 
+				margin:0px; 
+				height:100%; 
+			} 
  			.ui-content{
  				 background:url("../images/twokidsedit.jpg") no-repeat center center fixed;
  				 background-size : 100% 100%;
@@ -21,31 +28,60 @@
  				height: 100%;
  				width: 100%;
  			}
- 			@media all and (max-height: 55em) {
-		        #first_big_container .mainpageblock {
-		           min-height: 18em;
-		        }
-		        
-		    }
+ 			
 		    @media all and (max-width: 45em) {
 		        #first_big_container .mainpageblock {
-		           min-height: 8em;
+		           min-height: 7em;
 		        }
-		        
+		        .ui-icon-school{
+		    	background:url('../images/bank.png') no-repeat 50% 50%;
+		    	background-size : 3em 3em;
+		    	height: 4em;
+		    	width: 100%;
+		    }
 		    }
  			.mainpageblock {
-		          background:url("../images/graybg.jpg") no-repeat center center fixed;
+ 				  
+		          background:url("../images/bgp2.jpg") no-repeat center center fixed;
 		          background-size : 100% 100%;
-		          padding: 2px;
-		          filter:alpha(opacity=50); /*IE*/
-			      -moz-opacity:0.5; /*MOZ , FF*/
-				  opacity:0.5; /*CSS3, FF1.5*/
-		        }
-		    
+		          filter:alpha(opacity=70); /*IE*/
+			      -moz-opacity:0.7; /*MOZ , FF*/
+				  opacity:0.7; /*CSS3, FF1.5*/
+
+				
+		      }
+
+		     .blankblock {
+		     	filter:alpha(opacity=0); /*IE*/
+			      -moz-opacity:0; /*MOZ , FF*/
+				  opacity:0; /*CSS3, FF1.5*/
+		     }
+		    .mainpageblock .ui-icon-lmmainpage{
+		    	background-size : 4em 4em;
+		    	height: 4em;
+		    	width: 100%;
+		    }
+			.ui-icon-school{
+		    	background:url('../images/4.png') no-repeat 50% 50%;
+		    }
+		    .ui-icon-student{
+		    	background:url('../images/10.png') no-repeat 50% 50%;		   
+		    }
+		    .ui-icon-lessons{
+		    	background:url('../images/12.png') no-repeat 50% 50%;		    	
+		    }
+		    .ui-icon-specalevent{
+		    	background:url('../images/gifts.png') no-repeat 50% 50%;		    	
+		    }
+		    .ui-icon-lessonresult{
+		    	background:url('../images/25.png') no-repeat 50% 50%;		    	
+		    }
+		    .ui-icon-memebership{
+		    	background:url('../images/21.png') no-repeat 50% 50%;		    	
+		    }
  		</style>
  		<script>
  			$(document).ready(function(){
-    
 				var screen = $.mobile.getScreenHeight();
 
 				var header = $(".ui-header").hasClass("ui-header-fixed") ? $(".ui-header").outerHeight() - 1 : $(".ui-header").outerHeight();
@@ -57,6 +93,7 @@
 				var content = screen - header - footer - contentCurrent;
 
 				$(".ui-content").height(content);
+				
  			});
  		</script>
 		
@@ -69,68 +106,77 @@
  				
  				<div id="first_big_container">
 					<div class="ui-grid-b">
-						<div class="ui-block-a mainpageblock ui-shadow ui-corner-all">
-							
-
-								<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-inline">Check</a>
-								<p>12345678</p>
-							
+						<div class="ui-block-a">
+							<a href="#" class=" ui-btn ui-shadow ui-corner-all mainpageblock">
+									<div class="ui-icon-lmmainpage ui-icon-lessons">
+									</div>
+									<p>aaa</p>
+									
+							</a>
 						</div>
-						<div class="ui-block-b mainpageblock ui-shadow ui-corner-all">
-							
-
-								<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-inline">Check</a>
-								<p>12345678</p>
-							
+						<div class="ui-block-b">
+							<a href="#" class="ui-btn ui-shadow ui-corner-all blankblock">
+									<div class="ui-icon-school">
+									</div>
+									<p>1235678</p>
+									
+							</a>
 						</div>
-						<div class="ui-block-c mainpageblock ui-shadow ui-corner-all">
-							
-
-								<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-inline">Check</a>
-								<p>12345678</p>
-							
+						<div class="ui-block-c">
+							<a href="#" class="ui-btn ui-shadow ui-corner-all mainpageblock" >
+									<div class="ui-icon-lmmainpage ui-icon-student">
+									</div>
+									<p>1235678</p>
+									
+							</a>
 						</div>
-						<div class="ui-block-a mainpageblock ui-shadow ui-corner-all">
-							
-
-								<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-inline">Check</a>
-								<p>12345678</p>
-							
+						<div class="ui-block-a">
+							<a href="#" class="ui-btn ui-shadow ui-corner-all mainpageblock" >
+									<div class="ui-icon-lmmainpage ui-icon-specalevent">
+									</div>
+									<p>1235678</p>
+									
+							</a>
 						</div>
-						<div class="ui-block-b mainpageblock ui-shadow ui-corner-all">
-							
-
-								<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-inline">Check</a>
-								<p>12345678</p>
-							
+						<div class="ui-block-b">
+							<a href="#" class="ui-btn ui-shadow ui-corner-all mainpageblock" >
+									<div class="ui-icon-lmmainpage ui-icon-school">
+									</div>
+									<p>About us</p>
+									
+							</a>
 						</div>
-						<div class="ui-block-c mainpageblock ui-shadow ui-corner-all">
-							
-
-								<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-inline">Check</a>
-								<p>12345678</p>
-							
+						<div class="ui-block-c">
+							<a href="#" class="ui-btn ui-shadow ui-corner-all mainpageblock" >
+									<div class="ui-icon-lmmainpage ui-icon-lessonresult">
+									</div>
+									<p>1235678</p>
+									
+							</a>
 						</div>
-						<div class="ui-block-a mainpageblock ui-shadow ui-corner-all">
-							
-
-								<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-inline">Check</a>
-								<p>12345678</p>
-							
+						<div class="ui-block-a">
+							<a href="#" class="ui-btn ui-shadow ui-corner-all blankblock" >
+									<div class="ui-icon-school">
+									</div>
+									<p>1235678</p>
+									
+							</a>
 						</div>
-						<div class="ui-block-b mainpageblock ui-shadow ui-corner-all">
-							
-
-								<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-inline">Check</a>
-								<p>12345678</p>
-							
+						<div class="ui-block-b">
+							<a href="#" class="ui-btn ui-shadow ui-corner-all mainpageblock" >
+									<div class="ui-icon-lmmainpage ui-icon-memebership">
+									</div>
+									<p>1235678</p>
+									
+							</a>
 						</div>
-						<div class="ui-block-c mainpageblock ui-shadow ui-corner-all">
-							
-
-								<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-inline">Check</a>
-								<p>12345678</p>
-							
+						<div class="ui-block-c">
+							<a href="#" class="ui-btn ui-shadow ui-corner-all blankblock" >
+									<div class="ui-icon-school">
+									</div>
+									<p>1235678</p>
+									
+							</a>
 						</div>
 					</div>
 					
@@ -138,7 +184,9 @@
  				</div>
  				
  			</div>
- 			
+ 			<div data-role="footer" data-theme="e">
+ 				<p>footer</p>
+ 			</div>
  		</div>
  	</body>
 </html>
