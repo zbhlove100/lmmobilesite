@@ -1,0 +1,5 @@
+.ui-grid-a > .ui-block-a.main { width: 65% }
+.ui-grid-a > .ui-block-b.side { width: 35% }
+.ui-grid-a > .ui-block-a.side { width: 30% }
+.ui-grid-a > .ui-block-b.main { width: 70% }
+.forborder-top:not(:first-child) {border-top: 1px solid;}

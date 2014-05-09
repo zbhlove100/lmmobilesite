@@ -1,0 +1,100 @@
+  <!DOCTYPE html>
+<html lang="zh-cn" class="ui-mobile">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+    <link rel="stylesheet" href="../stylesheets/jquery.mobile-1.4.2.css" />
+    <link rel="stylesheet" href="../stylesheets/main.css" />
+    
+
+    <style type="text/css">
+      img{
+        max-width: 100%;
+      }
+    </style>
+    <script>
+      
+    </script>
+    
+
+  </head>
+  <body>
+    <div data-role="page" class="jqm-demos" data-quicklinks="true" id="teacher1">
+      <div data-role="header" data-theme="c">
+        <a href="index.html" class="ui-shadow ui-btn ui-btn-inline ui-corner-all ui-icon-home ui-btn-icon-left" data-theme="c" data-ajax="false">Home</a> 
+        <h1>about us</h1> 
+        <a href="./aboutus.html" class="ui-btn ui-btn-inline ui-corner-all" data-theme="c" rel="external">about us</a>
+      </div>
+
+      <div role="main" class="ui-content jqm-content">
+        <h3 class="ui-bar ui-bar-a">Heading</h3>
+        <div class="teachermessage ui-grid-a">
+          <div class="ui-block-a">
+            <img src="../images/teacher/gao_yanli.jpg">
+          </div>
+          <div class="ui-block-b">
+            <!-- <div class="ui-grid-a ">
+              <div class="ui-block-a forborder-top">
+                <p>name</p>
+              </div>
+              <div class="ui-block-b forborder-top">
+                <p>1111</p>
+              </div>
+              <div class="ui-block-a forborder-top">
+                <p>english name</p>
+              </div>
+              <div class="ui-block-b forborder-top">
+                <p>anna</p>
+              </div><div class="ui-block-a forborder-top">
+                <p>sex</p>
+              </div>
+              <div class="ui-block-b forborder-top">
+                <p>female</p>
+              </div> -->
+              <table data-role="table" id="table-column-toggle" class="ui-responsive ui-table table-stroke" >
+                 <thead>
+                  <tr>
+                   <th data-priority="2"></th>
+                   <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong>name</strong>
+                    </td>
+                    <td>
+                      1111
+                    </td>
+                  </tr> 
+                  <tr>
+                    <td>
+                      <strong>english name</strong>
+                    </td>
+                    <td>
+                      anna
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>sex</strong>
+                    </td>
+                    <td>
+                      female
+                    </td>
+                  </tr>
+                </tbody>
+              </table>  
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div data-role="footer" data-theme="c">
+        <p>footer</p>
+      </div>
+    </div>
+  </body>
+</html>

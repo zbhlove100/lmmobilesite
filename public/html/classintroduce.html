@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="ui-mobile">
+ 	<head>
+ 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 		
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
+		<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+ 		<link rel="stylesheet" href="../stylesheets/jquery.mobile-1.4.2.css" />
+    <link rel="stylesheet" href="../stylesheets/main.css" />
+		
+
+ 		<style type="text/css">
+			img{
+				max-width: 100%;
+			}
+ 		</style>
+ 		<script>
+ 			
+ 		</script>
+		
+
+ 	</head>
+ 	<body class="ui-mobile-viewport">
+ 		<div data-role="page" id="classintroduce-page" class="ui-page">
+ 			<div data-role="header" data-theme="c">
+ 				<a href="index.html" class="ui-shadow ui-btn ui-btn-inline ui-corner-all ui-icon-home ui-btn-icon-left" data-theme="c" data-ajax="false">Home</a> 
+ 				<h1>about us</h1> 
+ 				<a href="./aboutus.html" class="ui-btn ui-btn-inline ui-corner-all" data-theme="c" rel="external">about us</a>
+ 			</div>
+ 			<div data-role="content" class="ui-content" data-theme="a">
+        
+        <div data-role="tabs" id="tabs">
+          <div data-role="navbar">
+            <ul>
+                <li><a href="#tab1" class="ui-btn-active" data-ajax="false">middle school</a></li>
+                <li><a href="#tab2" data-ajax="false">junier school</a></li>
+            </ul>
+          </div>
+          <div id="tab1" class="ui-body-d ui-content">
+            <h1 class="ui-bar ui-bar-a">1 tab contents</h1>
+            <div class="classmessage ui-grid-a">
+              <div class="ui-block-a side">
+                <img src="../images/3.png">
+              </div>
+              <div class="ui-block-b main">
+                <div>
+                  <div class="ui-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsanblanditfermentum. Pellentesque cursus mauris purus, auctor commodo mi ullamcorper nec. Donec semper mattis eros, nec condimentum ante sollicitudin quis. Etiam orci sem, porttitor ut tellus nec, blandit posuere urna. Proin a arcu non lacus pretium faucibus. Aliquam sed est porttitor, ullamcorper urna nec, vehicula lorem. Cras porttitor est lorem, non venenatis diam convallis congue.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="classtable ui-grid-sole">
+              <form>
+                  <input id="filterTable-input" data-type="search">
+              </form>
+              <table data-role="table" id="movie-table" data-filter="true" data-input="#filterTable-input" class="ui-responsive ui-table">
+                <thead>
+                  <tr>
+                      <th data-priority="1"></th>
+                      <th data-priority="persist">Movie Title</th>
+                      <th data-priority="2">Year</th>
+                      <th data-priority="3"><abbr title="Rotten Tomato Rating">Rating</abbr></th>
+                      <th data-priority="4">Reviews</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external">Citizen Kane</a></td>
+                        <td>1941</td>
+                        <td>100%</td>
+                        <td>74</td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td><a href="http://en.wikipedia.org/wiki/Casablanca_(film)" data-rel="external">Casablanca</a></td>
+                        <td>1942</td>
+                        <td>97%</td>
+                        <td>64</td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td><a href="http://en.wikipedia.org/wiki/The_Godfather" data-rel="external">The Godfather</a></td>
+                        <td>1972</td>
+                        <td>97%</td>
+                        <td>87</td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="tab2" class="ui-body-d ui-content">
+            <div>
+              <h3 class="ui-bar ui-bar-a">Heading</h3>
+              <div class="ui-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsanblanditfermentum. Pellentesque cursus mauris purus, auctor commodo mi ullamcorper nec. Donec semper mattis eros, nec condimentum ante sollicitudin quis. Etiam orci sem, porttitor ut tellus nec, blandit posuere urna. Proin a arcu non lacus pretium faucibus. Aliquam sed est porttitor, ullamcorper urna nec, vehicula lorem. Cras porttitor est lorem, non venenatis diam convallis congue.</p>
+              </div>
+            </div>
+          </div>
+        </div>		
+ 			</div>
+ 			<div data-role="footer" data-theme="c">
+ 				<p>footer</p>
+ 			</div>
+ 		</div>
+
+ 	</body>
+</html>
