@@ -29,68 +29,83 @@
       </div>
 
       <div role="main" class="ui-content jqm-content">
-        <h3 class="ui-bar ui-bar-a">Heading</h3>
-        <div class="teachermessage ui-grid-a">
+        <h3 class="ui-bar ui-bar-a ui-corner-all">Heading</h3>
+        <div class="responsive-gird-class">
           <div class="ui-block-a">
             <img src="../images/teacher/gao_yanli.jpg">
           </div>
           <div class="ui-block-b">
-            <!-- <div class="ui-grid-a ">
-              <div class="ui-block-a forborder-top">
-                <p>name</p>
-              </div>
-              <div class="ui-block-b forborder-top">
-                <p>1111</p>
-              </div>
-              <div class="ui-block-a forborder-top">
-                <p>english name</p>
-              </div>
-              <div class="ui-block-b forborder-top">
-                <p>anna</p>
-              </div><div class="ui-block-a forborder-top">
-                <p>sex</p>
-              </div>
-              <div class="ui-block-b forborder-top">
-                <p>female</p>
-              </div> -->
-              <table data-role="table" id="table-column-toggle" class="ui-responsive ui-table table-stroke" >
+              <h3 class="titlewithunderline" style="text-align:left">Message</h3>
+              <table data-role="table" data-mode="reflow" id="table-column-toggle" class="movie-list" >
                  <thead>
                   <tr>
-                   <th data-priority="2"></th>
-                   <th></th>
+                      <th data-priority="1"></th>
+                      <th data-priority="persist"></th>
+                      <th data-priority="2"></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      <strong>name</strong>
-                    </td>
-                    <td>
-                      1111
-                    </td>
-                  </tr> 
-                  <tr>
-                    <td>
-                      <strong>english name</strong>
-                    </td>
-                    <td>
-                      anna
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>sex</strong>
-                    </td>
-                    <td>
-                      female
-                    </td>
-                  </tr>
+                    <tr>
+                        <th>1</th>
+                        <td class="title"><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external">Citizen Kane</a></td>
+                        <td>1111</td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td class="title"><a href="http://en.wikipedia.org/wiki/Casablanca_(film)" data-rel="external">Casablanca</a></td>
+                        <td>1111</td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td class="title"><a href="http://en.wikipedia.org/wiki/The_Godfather" data-rel="external">The Godfather</a></td>
+                        <td>1111</td>
+                          
+                    </tr>
                 </tbody>
               </table>  
             </div>
-            
           </div>
-        </div>
+          <div class="classtable ui-grid-sole">
+            <h3 class="titlewithunderline">class</h3>
+            <form>
+                <input id="filterTable-input" data-type="search">
+            </form>
+            <table data-role="table" id="movie-table" data-filter="true" data-input="#filterTable-input"  data-mode="reflow" class="movie-list">
+              <thead>
+                <tr>
+                    <th data-priority="1"></th>
+                    <th data-priority="persist">Movie Title</th>
+                    <th data-priority="2">Year</th>
+                    <th data-priority="3"><abbr title="Rotten Tomato Rating">Rating</abbr></th>
+                    <th data-priority="4">Reviews</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <th>1</th>
+                      <td class="title"><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external">Citizen Kane</a></td>
+                      <td>1941</td>
+                      <td>100%</td>
+                      <td>74</td>
+                  </tr>
+                  <tr>
+                      <th>2</th>
+                      <td class="title"><a href="http://en.wikipedia.org/wiki/Casablanca_(film)" data-rel="external">Casablanca</a></td>
+                      <td>1942</td>
+                      <td>97%</td>
+                      <td>64</td>
+                  </tr>
+                  <tr>
+                      <th>3</th>
+                      <td><a href="http://en.wikipedia.org/wiki/The_Godfather" data-rel="external">The Godfather</a></td>
+                      <td>1972</td>
+                      <td>97%</td>
+                      <td>87</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        
       </div>
       <div data-role="footer" data-theme="c">
         <p>footer</p>

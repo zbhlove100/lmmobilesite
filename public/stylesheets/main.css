@@ -3,3 +3,326 @@
 .ui-grid-a > .ui-block-a.side { width: 30% }
 .ui-grid-a > .ui-block-b.main { width: 70% }
 .forborder-top:not(:first-child) {border-top: 1px solid;}
+.titlewithunderline {
+	color: #3eb249;
+	background-color: transparent;
+	border-bottom:1px solid #3eb249;
+	font-size:1.6em;
+	padding-bottom:.2em;
+}
+.haveborder {
+	border: 1px solid;
+}
+/*
+custom icon
+*/
+.ui-icon-1cup:after {
+	background-image: url(./images/1medal.jpg);
+}
+.ui-icon-2cup:after {
+	background-image: url(./images/2medal.jpg);
+}
+.ui-icon-3cup:after {
+	background-image: url(./images/3medal.jpg);
+}
+
+.movie-list thead th,
+.movie-list tbody th .ui-table-cell-label,
+.movie-list tbody td .ui-table-cell-label {
+    text-transform: uppercase;
+    font-size: .7em;
+    color: rgba(0,0,0,0.5);
+    font-weight: normal;
+}
+/* White bg, large blue text for rank and title */
+.movie-list tbody th {
+    font-size: 1.2em;
+    background-color: #fff;
+    color: #77bbff;
+    text-align: center;
+}
+/*  Add a bit of extra left padding for the title */
+.movie-list tbody td.title {
+    padding-left: .8em;
+}
+/* Add strokes */
+.movie-list thead th {
+    border-bottom: 1px solid #d6d6d6; /* non-RGBA fallback */
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.movie-list tbody th,
+.movie-list tbody td {
+    border-bottom: 1px solid #e6e6e6; /* non-RGBA fallback  */
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+/*  Custom stacked styles for mobile sizes */
+/*  Use a max-width media query so we don't have to undo these styles */
+@media (max-width: 40em) {
+    /*  Negate the margin between sections */
+    .movie-list tbody th {
+        margin-top: 0;
+        text-align: left;
+    }
+    /*  White bg, large blue text for rank and title */
+    .movie-list tbody th,
+    .movie-list tbody td.title {
+        display: block;
+        font-size: 1.2em;
+        line-height: 110%;
+        padding: .5em .5em;
+        background-color: #fff;
+        color: #77bbff;
+        -moz-box-shadow: 0 1px 6px rgba(0,0,0,.1);
+        -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.1);
+        box-shadow: 0 1px 6px rgba(0,0,0,.1);
+    }
+    /*  Hide labels for rank and title */
+    .movie-list tbody th .ui-table-cell-label,
+    .movie-list tbody td.title .ui-table-cell-label {
+        display: none;
+    }
+    /*  Position the title next to the rank, pad to the left */
+    .movie-list tbody td.title {
+        margin-top: -2.1em;
+        padding-left: 2.2em;
+        border-bottom: 1px solid rgba(0,0,0,.15);
+    }
+    /*  Make the data bold */
+    .movie-list th,
+    .movie-list td {
+        font-weight: bold;
+    }
+    /* Make the label elements a percentage width */
+    .movie-list td .ui-table-cell-label,
+    .movie-list th .ui-table-cell-label {
+        min-width: 20%;
+    }
+}
+/* Media query to show as a standard table at wider widths */
+@media ( min-width: 40em ) {
+    /* Show the table header rows */
+    .movie-list td,
+    .movie-list th,
+    .movie-list tbody th,
+    .movie-list tbody td,
+    .movie-list thead td,
+    .movie-list thead th {
+        display: table-cell;
+        margin: 0;
+    }
+    /* Hide the labels in each cell */
+    .movie-list td .ui-table-cell-label,
+    .movie-list th .ui-table-cell-label {
+        display: none;
+    }
+}
+/* Hack to make IE9 and WP7.5 treat cells like block level elements */
+/* Applied in a max-width media query up to the table layout breakpoint so we don't need to negate this */
+@media ( max-width: 40em ) {
+    .movie-list td,
+    .movie-list th {
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        float: left;
+        clear: left;
+    }
+}
+
+
+
+.responsive-gird-class .ui-body {
+    text-align: left;
+    border-color: #ddd;
+}
+.responsive-gird-class p {
+    color: #777;
+    line-height: 140%
+}
+/* Stack all blocks to start */
+.responsive-gird-class .ui-block-a,
+.responsive-gird-class .ui-block-b {
+	text-align: center;
+    width: 100%;
+    float: none;
+}
+/* Collapsing borders */
+.responsive-gird-class > div + div .ui-body {
+    border-top-width: 0;
+}
+/* 1st breakpoint - Float B and C, leave A full width on top */
+@media all and (min-width: 42em) {
+    .responsive-gird-class {
+        overflow: hidden; /* Use this or a "clearfix" to give the container height */
+    }
+    .responsive-gird-class .ui-body {
+       min-height: 14em;
+    }
+    .responsive-gird-class .ui-block-a {
+      float: left;
+      width: 29.95%;
+    }
+    .responsive-gird-class .ui-block-b {
+      float: left;
+      width: 69.95%;
+    }
+    .responsive-gird-class .ui-block-a p,
+    .responsive-gird-class .ui-block-b p {
+      font-size: .8em;
+    }
+    .responsive-gird-class > div + div .ui-body {
+        border-top-width: 1px;
+    }
+    .responsive-gird-class > div:first-child .ui-body {
+        border-bottom-width: 0;
+    }
+    .responsive-gird-class > div:last-child .ui-body {
+        border-left-width: 0;
+    }
+}
+
+
+.responsive-gird-class2 .ui-body {
+    text-align: left;
+    border-color: #ddd;
+}
+.responsive-gird-class2 p {
+    color: #777;
+    line-height: 140%
+}
+/* Stack all blocks to start */
+.responsive-gird-class2 .ui-block-a,
+.responsive-gird-class2 .ui-block-b {
+	text-align: center;
+    width: 100%;
+    float: none;
+}
+/* Collapsing borders */
+.responsive-gird-class2 > div + div .ui-body {
+    border-top-width: 0;
+}
+/* 1st breakpoint - Float B and C, leave A full width on top */
+@media all and (min-width: 42em) {
+    .responsive-gird-class2 {
+        overflow: hidden; /* Use this or a "clearfix" to give the container height */
+    }
+    .responsive-gird-class2 .ui-body {
+       min-height: 14em;
+    }
+    .responsive-gird-class2 .ui-block-a {
+      float: left;
+      width: 49.95%;
+    }
+    .responsive-gird-class2 .ui-block-b {
+      float: left;
+      width: 49.95%;
+    }
+    .responsive-gird-class2 .ui-block-a p,
+    .responsive-gird-class2 .ui-block-b p {
+      font-size: 1.2em;
+    }
+    .responsive-gird-class2 > div + div .ui-body {
+        border-top-width: 1px;
+    }
+    .responsive-gird-class2 > div:first-child .ui-body {
+        border-bottom-width: 0;
+    }
+    .responsive-gird-class2 > div:last-child .ui-body {
+        border-left-width: 0;
+    }
+}
+
+
+
+.gallary-gird-class .ui-body {
+    text-align: left;
+    border-color: #ddd;
+    max-height: 3em;
+}
+.gallary-gird-class p {
+    color: #777;
+    line-height: 100%
+}
+/* Stack all blocks to start */
+.gallary-gird-class .ui-block-a,
+.gallary-gird-class .ui-block-b,
+.gallary-gird-class .ui-block-c,
+.gallary-gird-class .ui-block-e,
+.gallary-gird-class .ui-block-f,
+.gallary-gird-class .ui-block-d {
+	text-align: center;
+    width: 49%;
+    float: left;
+    background-color: #fff;
+    color: #77bbff;
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+.gallary-gird-class .ui-block-a p,
+.gallary-gird-class .ui-block-c p,
+.gallary-gird-class .ui-block-d p,
+.gallary-gird-class .ui-block-e p,
+.gallary-gird-class .ui-block-f p,
+.gallary-gird-class .ui-block-b p {
+  font-size: .8em;
+}
+/* Collapsing borders */
+.gallary-gird-class > div + div .ui-body {
+    border-top-width: 0;
+}
+/* 1st breakpoint - Float B and C, leave A full width on top */
+@media all and (min-width: 42em) {
+    .gallary-gird-class {
+        overflow: hidden; /* Use this or a "clearfix" to give the container height */
+    }
+    .gallary-gird-class .ui-block-a,
+	.gallary-gird-class .ui-block-b,
+	.gallary-gird-class .ui-block-c,
+	.gallary-gird-class .ui-block-e,
+	.gallary-gird-class .ui-block-f,
+	.gallary-gird-class .ui-block-d {
+      float: left;
+      width: 33%;
+    }
+
+    .gallary-gird-class .ui-block-a p,
+    .gallary-gird-class .ui-block-c p,
+    .gallary-gird-class .ui-block-d p,
+    .gallary-gird-class .ui-block-e p,
+    .gallary-gird-class .ui-block-f p,
+    .gallary-gird-class .ui-block-b p {
+      font-size: .8em;
+    }
+    .gallary-gird-class > div + div .ui-body {
+        border-top-width: 1px;
+    }
+    .gallary-gird-class > div:first-child .ui-body {
+        border-bottom-width: 0;
+    }
+    .gallary-gird-class > div:last-child .ui-body {
+        border-left-width: 0;
+    }
+}
+
+/* 3rd breakpoint - Bump up font size at very wide screens */
+@media all and (min-width: 75em) {
+    .gallary-gird-class .ui-body {
+      font-size: 125%;
+    }
+    .gallary-gird-class .ui-block-a,
+	.gallary-gird-class .ui-block-b,
+	.gallary-gird-class .ui-block-c,
+	.gallary-gird-class .ui-block-e,
+	.gallary-gird-class .ui-block-f,
+	.gallary-gird-class .ui-block-d {
+      float: left;
+      width: 16%;
+    }
+    
+}
+.gallarydiv {
+	padding: 0px 1px;
+	margin: 0px 1px;
+}

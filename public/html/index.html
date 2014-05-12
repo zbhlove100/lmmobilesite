@@ -22,33 +22,50 @@
  				 padding-right: 5%;
  				 padding-bottom: 10%;
  			}
- 			#first_big_container{
- 				
- 				/*border: 1px red solid;*/
- 				height: 100%;
- 				width: 100%;
- 			}
- 			
-		    @media all and (max-width: 768px) {
-		        #first_big_container .mainpageblock {
-		           min-height: 7em;
-		        }
-		        .ui-icon-school{
-		    	background:url('../images/bank.png') no-repeat 50% 50%;
+ 			#first_big_container .mainpageblock {
+	           max-height: 5em;
+	        }
+	       	.mainpageblock .ui-icon-lmmainpage{
 		    	background-size : 3em 3em;
-		    	height: 4em;
+		    	height: 3em;
 		    	width: 100%;
+	   		}
+		    @media all and (min-width: 42em) {
+		        #first_big_container .mainpageblock {
+		           max-height: 7em;
+		        }
+		       	.mainpageblock .ui-icon-lmmainpage{
+			    	background-size : 4em 4em;
+			    	height: 4em;
+			    	width: 100%;
+		   		}
 		    }
+		    @media all and (min-width: 52em) {
+		        #first_big_container .mainpageblock {
+		           min-height: 9em;
+		        }
+		       	.mainpageblock .ui-icon-lmmainpage{
+			    	background-size : 6em 6em;
+			    	height: 6em;
+			    	width: 100%;
+		   		}
 		    }
- 			.mainpageblock {
- 				  
+		    @media all and (min-width: 75em) {
+		        #first_big_container .mainpageblock {
+		           min-height: 14em;
+		        }
+		       	.mainpageblock .ui-icon-lmmainpage{
+			    	background-size : 9em 9em;
+			    	height: 9em;
+			    	width: 100%;
+		   		}
+		    }
+ 			.mainpageblock {  
 		          background:url("../images/bgp2.jpg") no-repeat center center fixed;
 		          background-size : 100% 100%;
-		          filter:alpha(opacity=70); /*IE*/
-			      -moz-opacity:0.7; /*MOZ , FF*/
-				  opacity:0.7; /*CSS3, FF1.5*/
-
-				
+		          filter:alpha(opacity=75); /*IE*/
+			      -moz-opacity:0.75; /*MOZ , FF*/
+				  opacity:0.75; /*CSS3, FF1.5*/
 		      }
 
 		     .blankblock {
@@ -56,16 +73,12 @@
 			      -moz-opacity:0; /*MOZ , FF*/
 				  opacity:0; /*CSS3, FF1.5*/
 		     }
-		    .mainpageblock .ui-icon-lmmainpage{
-		    	background-size : 4em 4em;
-		    	height: 4em;
-		    	width: 100%;
-		    }
+
 			.ui-icon-school{
 		    	background:url('../images/4.png') no-repeat 50% 50%;
 		    }
 		    .ui-icon-student{
-		    	background:url('../images/10.png') no-repeat 50% 50%;		   
+		    	background:url('../images/4o1.png') no-repeat 50% 50%;		   
 		    }
 		    .ui-icon-lessons{
 		    	background:url('../images/12.png') no-repeat 50% 50%;		    	
@@ -123,10 +136,10 @@
 							</a>
 						</div>
 						<div class="ui-block-c">
-							<a href="#" class="ui-btn ui-shadow ui-corner-all mainpageblock" >
+							<a href="sparksfly.html" class="ui-btn ui-shadow ui-corner-all mainpageblock" data-ajax="false">
 									<div class="ui-icon-lmmainpage ui-icon-student">
 									</div>
-									<p>Student</p>
+									<p>Sparks</p>
 									
 							</a>
 						</div>
@@ -147,10 +160,10 @@
 							</a>
 						</div>
 						<div class="ui-block-c">
-							<a href="#" class="ui-btn ui-shadow ui-corner-all mainpageblock" >
+							<a href="successlist.html" class="ui-btn ui-shadow ui-corner-all mainpageblock" data-ajax="false">
 									<div class="ui-icon-lmmainpage ui-icon-lessonresult">
 									</div>
-									<p>Lesson result</p>
+									<p>Success</p>
 									
 							</a>
 						</div>
@@ -183,9 +196,6 @@
 					
  				</div>
  				
- 			</div>
- 			<div data-role="footer" data-theme="a">
- 				<p>footer</p>
  			</div>
  		</div>
  	</body>
