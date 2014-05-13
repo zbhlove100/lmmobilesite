@@ -1,0 +1,208 @@
+#{extends 'main.html' /}
+ <style>
+ .movie-list thead th,
+.movie-list tbody th .ui-table-cell-label,
+.movie-list tbody td .ui-table-cell-label {
+    text-transform: uppercase;
+    font-size: .7em;
+    color: rgba(0,0,0,0.5);
+    font-weight: normal;
+}
+/* White bg, large blue text for rank and title */
+.movie-list tbody th {
+    font-size: 1.2em;
+    background-color: #fff;
+    color: #77bbff;
+    text-align: center;
+}
+/*  Add a bit of extra left padding for the title */
+.movie-list tbody td.title {
+    padding-left: 1em;
+}
+/* Add strokes */
+.movie-list thead th {
+    border-bottom: 1px solid #d6d6d6; /* non-RGBA fallback */
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.movie-list tbody th,
+.movie-list tbody td {
+    border-bottom: 1px solid #e6e6e6; /* non-RGBA fallback  */
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+/*  Custom stacked styles for mobile sizes */
+/*  Use a max-width media query so we don't have to undo these styles */
+@media all and (max-width: 40em) {
+    /*  Negate the margin between sections */
+    .movie-list tbody th {
+        margin-top: 0;
+        text-align: left;
+    }
+    /*  White bg, large blue text for rank and title */
+    .movie-list tbody th,
+    .movie-list tbody td.title {
+        display: block;
+        font-size: 1em;
+        line-height: 80%;
+        padding: .5em .5em;
+        background-color: #fff;
+        color: #77bbff;
+        -moz-box-shadow: 0 1px 6px rgba(0,0,0,.1);
+        -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.1);
+        box-shadow: 0 1px 6px rgba(0,0,0,.1);
+    }
+    /*  Hide labels for rank and title */
+    .movie-list tbody th .ui-table-cell-label,
+    .movie-list tbody td.title .ui-table-cell-label {
+        display: none;
+    }
+    /*  Position the title next to the rank, pad to the left */
+    .movie-list tbody td.title {
+        margin-top: -2.1em;
+        padding-left: 2.2em;
+        border-bottom: 1px solid rgba(0,0,0,.15);
+    }
+    /*  Make the data bold */
+    .movie-list th,
+    .movie-list td {
+        font-weight: bold;
+    }
+    /* Make the label elements a percentage width */
+    .movie-list td .ui-table-cell-label,
+    .movie-list th .ui-table-cell-label {
+        min-width: 20%;
+    }
+}
+/* Media query to show as a standard table at wider widths */
+@media only all and ( min-width: 40em ) {
+    /* Show the table header rows */
+    .movie-list td,
+    .movie-list th,
+    .movie-list tbody th,
+    .movie-list tbody td,
+    .movie-list thead td,
+    .movie-list thead th {
+        display: table-cell;
+        margin: 0;
+    }
+    /* Hide the labels in each cell */
+    .movie-list td .ui-table-cell-label,
+    .movie-list th .ui-table-cell-label {
+        display: none;
+    }
+    .movie-list tbody .hideth{
+    	display: none;
+    }
+}
+/* Hack to make IE9 and WP7.5 treat cells like block level elements */
+/* Applied in a max-width media query up to the table layout breakpoint so we don't need to negate this */
+@media ( max-width: 40em ) {
+    .movie-list td,
+    .movie-list th {
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        float: left;
+        clear: left;
+    }
+}
+ </style>
+<div data-role="page" id="teacherlist-page">
+   #{header /}
+	<div data-role="content" class="ui-content" data-theme="a">
+        
+        <div data-role="tabs" id="tabs">
+          <div data-role="navbar">
+            <ul>
+                <li><a href="#tab1" class="ui-btn-active" data-ajax="false">少儿系列</a></li>
+                <li><a href="#tab2" data-ajax="false">进阶系列</a></li>
+            </ul>
+          </div>
+          <div id="tab1" class="ui-body-d ui-content">
+            <h2 class="ui-bar ui-bar-a">少儿系列</h2>
+            <div class="responsive-gird-class">
+              <div class="ui-block-a">
+                <img src="@{'public/images/4.png'}">
+              </div>
+              <div class="ui-block-b">
+                <div>
+                  <div class="ui-body">
+                    <p>少儿系列</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="classtable ui-grid-sole">
+              <form>
+                  <input id="filterTable-input" data-type="search">
+              </form>
+              <table data-role="table" id="movie-table" data-filter="true" data-input="#filterTable-input"  data-mode="reflow" class="movie-list">
+	              <thead>
+	                <tr>
+	                    <th data-priority="1"></th>
+	                    <th data-priority="persist">课名</th>
+	                    <th data-priority="2">年份</th>
+	                    <th data-priority="3">上课时间</th>
+	                    <th data-priority="4">开始时间</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	              	#{list items:lessons,as:'lesson'}
+	                  <tr>
+	                      <th>1</th>
+	                      <td class="title">${lesson.name}</td>
+	                      <td>${lesson.lessonYear}</td>
+	                      <td>${lesson.getLessonTimeName()}${lesson.periodOfDay}</td>
+	                      <td>${lesson.startTime.format('yyyy-MM-dd')}</td>
+	                  </tr>
+	                 #{/list}
+	              </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="tab2" class="ui-body-d ui-content">
+            <h2 class="ui-bar ui-bar-a">进阶系列</h2>
+            <div class="responsive-gird-class">
+              <div class="ui-block-a">
+                <img src="@{'public/images/3.png'}">
+              </div>
+              <div class="ui-block-b">
+                <div>
+                  <div class="ui-body">
+                    <p>进阶系列</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="classtable ui-grid-sole">
+              <form>
+                  <input id="filterTable-input" data-type="search">
+              </form>
+              <table data-role="table" id="movie-table" data-filter="true" data-input="#filterTable-input"  data-mode="reflow" class="movie-list">
+	              <thead>
+	                <tr>
+	                    <th data-priority="1"></th>
+	                    <th data-priority="persist">课名</th>
+	                    <th data-priority="2">年份</th>
+	                    <th data-priority="3">上课时间</th>
+	                    <th data-priority="4">开始时间</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	              	#{list items:lessons2,as:'lesson'}
+	                  <tr>
+	                      <th>1</th>
+	                      <td class="title">${lesson.name}</td>
+	                      <td>${lesson.lessonYear}</td>
+	                      <td>${lesson.getLessonTimeName()}${lesson.periodOfDay}</td>
+	                      <td>${lesson.startTime.format('yyyy-MM-dd')}</td>
+	                  </tr>
+	                 #{/list}
+	              </tbody>
+              </table>
+            </div>
+          </div>
+        </div>		
+ 	</div>
+	#{footer /}
+</div>

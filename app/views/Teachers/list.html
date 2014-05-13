@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+<div data-role="page" id="teacherlist-page">
+   #{header /}
+	<div data-role="content" class="ui-content" data-theme="a">
+	 	<ul data-role="listview"  data-inset="true" >
+		    <li data-role="list-divider" data-theme="e">新思维 <span class="ui-li-count">${teachers1size}</span></li>
+		    #{list items:teachers1,as:'teacher'}
+		    <li>
+	            <a href="@{Teachers.detail(teacher.id)}" data-ajax="false">
+	           	<img src="@{'public/images/teacher'}/${teacher?.imgDetail?.basicImg}">
+	 				    <h2>${teacher.name}</h2>
+	 				    <p><strong>${teacher.teacherDetail?.enName?:''}</strong></p>
+	 				    <p>${teacher.teacherDetail?.summary?:''}</p>
+		      </a>
+	         </li>
+	        #{/list}
+		</ul>
+	</div>
+	#{footer /}
+</div>
