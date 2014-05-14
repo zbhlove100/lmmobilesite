@@ -43,7 +43,7 @@ custom icon
 }
 /*  Add a bit of extra left padding for the title */
 .movie-list tbody td.title {
-    padding-left: .8em;
+    padding-left: 1em;
 }
 /* Add strokes */
 .movie-list thead th {
@@ -57,7 +57,7 @@ custom icon
 }
 /*  Custom stacked styles for mobile sizes */
 /*  Use a max-width media query so we don't have to undo these styles */
-@media (max-width: 40em) {
+@media all and (max-width: 40em) {
     /*  Negate the margin between sections */
     .movie-list tbody th {
         margin-top: 0;
@@ -67,8 +67,8 @@ custom icon
     .movie-list tbody th,
     .movie-list tbody td.title {
         display: block;
-        font-size: 1.2em;
-        line-height: 110%;
+        font-size: 1em;
+        line-height: 80%;
         padding: .5em .5em;
         background-color: #fff;
         color: #77bbff;
@@ -99,7 +99,7 @@ custom icon
     }
 }
 /* Media query to show as a standard table at wider widths */
-@media ( min-width: 40em ) {
+@media only all and ( min-width: 40em ) {
     /* Show the table header rows */
     .movie-list td,
     .movie-list th,
@@ -114,6 +114,9 @@ custom icon
     .movie-list td .ui-table-cell-label,
     .movie-list th .ui-table-cell-label {
         display: none;
+    }
+    .movie-list tbody .hideth{
+    	display: none;
     }
 }
 /* Hack to make IE9 and WP7.5 treat cells like block level elements */
