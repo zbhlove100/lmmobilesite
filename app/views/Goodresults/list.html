@@ -1,0 +1,28 @@
+#{extends 'main.html' /}
+<div data-role="page" id="teacherlist-page">
+   #{header /}
+	<div data-role="content" class="ui-content" data-theme="a">
+		<div>
+          <h4 class="titlewithunderline">summary</h4>
+          <div class="ui-body" id="salemessage-summary">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsanblanditfermentum. Pellentesque cursus mauris purus, auctor commodo mi ullamcorper nec. Donec semper mattis eros, nec condimentum ante sollicitudin quis. Etiam orci sem, porttitor ut tellus nec, blandit posuere urna. Proin a arcu non lacus pretium faucibus. Aliquam sed est porttitor, ullamcorper urna nec, vehicula lorem. Cras porttitor est lorem, non venenatis diam convallis congue.</p>
+          </div>
+        </div>
+		<ul data-role="listview"  data-inset="true" >
+			#{list items:scores,as:'score'}
+			<li data-icon="1cup">
+              <a href="#" data-ajax="false">
+              	<img src="@{'public/images/3.png'}">
+    				    <h2>${score.student.name}</h2>
+    				    <p><strong>${score.examname}</strong></p>
+    				    <p><strong>${score.score}</strong></p>
+				        <p class="ui-li-aside"><strong>${score.examtime.format('yyyy-MM-dd')}</strong></p>
+				      </a>
+            </li>
+            #{/list}
+		    
+		</ul>
+ 				 				
+ 			</div>
+	#{footer /}
+</div>

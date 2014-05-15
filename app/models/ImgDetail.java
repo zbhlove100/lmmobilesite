@@ -22,4 +22,7 @@ public class ImgDetail extends BaseModel {
     
     @ManyToOne
     public Salemessage salemessage;
+    
+    @ManyToOne
+    public Spark spark;
 }
