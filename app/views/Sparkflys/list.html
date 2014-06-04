@@ -13,6 +13,33 @@
   opacity: 0.3;
 }
 </style>
+<script>
+var page = ${pagenumber}
+var block_template = '<div class="ui-block-{girdname}">' +
+						'<div class="gallarydiv haveborder ui-corner-all">' +
+						'<p class="titlewithunderline">${sparkname}</p>' +
+						'<a href="#popupParis" data-rel="popup" data-position-to="window" data-transition="fade">' +
+							'<img id="salemessage-pic" src="/public/images/{imgloaction}">' +
+						'</a></div></div>';
+function loadmorepic(){
+	page = page +1;
+	var url = "/sparkflys/getmorepic?newpagenumber="+page;
+	$.ajax({
+        url: url,   
+        type: 'post',      //POST方式发送数据
+        async: false,      //ajax同步
+        success: function(data) {
+        	var girds = ["a","b","c","d","e","f"];
+        	for(var i=0;i<data.length;i++){
+        		var k = i % 6;
+        		var girdname = girds[k];
+        		var template1 = block_template.replace('{girdname}',girdname).replace('{sparkname}',data[i].spark.name).replace('{imgloaction}',data[i].basicImg)
+        		$(template1).appendTo(".gallary-gird-class")
+        	}
+        }
+    });
+}
+</script>
 <div data-role="page" id="teacherlist-page">
    #{header /}
 	<div data-role="content" class="ui-content" data-theme="a">
@@ -24,14 +51,16 @@
 				}%
 				<div class="ui-block-${girdname}">
 					<div class="gallarydiv haveborder ui-corner-all">
-						<p class="titlewithunderline">summary</p>
+						<p class="titlewithunderline">${spark.spark.name}</p>
 						<a href="#popupParis" data-rel="popup" data-position-to="window" data-transition="fade">
-							<img id="salemessage-pic" src="@{'public/images/teacher/gao_yanli.jpg'}">
+							<img id="salemessage-pic" src="@{'public/images/'}${spark.basicImg}">
 						</a>
 					</div>
 				</div>
 			#{/list}
 		</div>
  	</div>
+ 	<button class="ui-btn ui-btn-e ui-corner-all" onclick="loadmorepic()">更多...</button>
 	#{footer /}
+	
 </div>
