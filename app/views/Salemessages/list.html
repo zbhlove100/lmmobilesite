@@ -3,10 +3,10 @@
    #{header /}
 	<div data-role="content" class="ui-content" data-theme="a">
  				<ul data-role="listview"  data-inset="true" >
-				    <li data-role="list-divider" data-theme="e">2014 Summer <span class="ui-li-count">2</span></li>
+				    <li data-role="list-divider" data-theme="e">2014 Summer <span class="ui-li-count">${sms.size()}</span></li>
 				    #{list items:sms,as:'sm'}
 				    <li><a href="@{'public/html/salemessage'}/${sm.htmlname}" data-ajax="false">
-              			<img src="@{'public/images'}/${sm?.imgs.get(0)?.basicImg}">
+              			<img src="@{'public/images'}/${sm.imgs?.get(0)?.basicImg}">
 				    <h2>${sm.title}</h2>
 				    <p style="white-space:pre-wrap;">${sm.summary}</p>
 				    </a>

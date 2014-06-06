@@ -9,6 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="score")
 public class Score extends BaseModel{
+	
 	public String score;
 	
 	public String examname;
