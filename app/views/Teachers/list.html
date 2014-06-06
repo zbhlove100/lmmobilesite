@@ -7,7 +7,7 @@
 		    #{list items:teachers1,as:'teacher'}
 		    <li>
 	            <a href="@{Teachers.detail(teacher.id)}" data-ajax="false">
-	           	<img src="@{'public/images/teacher'}/${teacher?.imgDetail?.basicImg}">
+	           	<img src="@{'public/images/teacher/100x100'}/${teacher?.imgDetail?.basicImg}">
 	 				    <h2>${teacher.name}</h2>
 	 				    <p><strong>${teacher.teacherDetail?.enName?:''}</strong></p>
 	 				    <p>${teacher.teacherDetail?.summary?:''}</p>
